@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using eazy.request.filter.Cache;
+using eazy.request.filter.EfCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,8 +15,8 @@ namespace eazy.request.filter
             IConfiguration configuration) 
             where TContext : DbContext
         {
-            //services.AddEfCore<TContext>(configuration);
-            //services.AddCacheable(configuration);
+            services.AddEfCore<TContext>(configuration);
+            services.AddCacheable(configuration);
 
             return services;
         }

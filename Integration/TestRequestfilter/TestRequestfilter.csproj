@@ -8,4 +8,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\eazy.request.filter\eazy.request.filter.csproj" />
+  </ItemGroup>
+
 </Project>

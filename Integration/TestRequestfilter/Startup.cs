@@ -1,3 +1,4 @@
+using eazy.request.filter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TestRequestfilter.Data;
 
 namespace TestRequestfilter
 {
@@ -26,6 +28,7 @@ namespace TestRequestfilter
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddEazyRequestFilter<DataContext>(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

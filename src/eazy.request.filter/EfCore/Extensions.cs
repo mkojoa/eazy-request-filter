@@ -1,4 +1,5 @@
 ﻿using eazy.request.filter.EfCore.Option;
+using eazy.request.filter.EfCore.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,7 @@ namespace eazy.request.filter.EfCore
                     option.ConnectionString
                 ));
 
+            services.AddScoped<IEfCoreService, EfCoreService<TContext>>();
             return services;
         }
     }
